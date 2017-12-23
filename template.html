@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <title>Northside Festival Schedule</title>
+  <link rel="stylesheet" href="lib/css/typography.css" type="text/css" charset="utf-8">
+  <link rel="stylesheet" href="styles.css" type="text/css" charset="utf-8">
+</head>
+<body>
+
+  <div class="listing">
+
+        <div class = "summaryContainer">
+            
+            <h1 font size ="">Northside Festival</h1>
+            <!-- <h3>{{#each totalShowCount}}{{this}}{{/each}}</h3><h4>venues</h4> -->
+            <br><div class = "bdg" id = "bdg6"><h3><br>1 Hour</h3></div><br>
+        </div>
+
+        
+              {{#each doubleAlphabetized}}
+        <div id = "{{this.venue}}">
+              <h2 class>{{this.venue}}<!-- : {{this.venueDuration}} min --></h2>
+        </div>
+        
+        <div class = "artistsContainer">
+            <p class = "artist">
+            {{#each shows}}
+            {{this.artist}}<!-- <span class="duration">:{{this.time.duration}}</span> --><br>
+            {{/each}}
+            <span class = "bdg" id = "bdg{{this.venueDuration}}"></span>
+            </p>
+        </div>
+        {{/each}}
+  </div>
+  
+
+  <script src="lib/js/jquery-3.2.1.min.js"></script>
+  <script src="lib/js/lodash-4.17.4.min.js"></script>
+  <script src="ui.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>
