@@ -5,7 +5,7 @@ var fs = require('fs'),
 
 var tmplSource = fs.readFileSync('template.html', 'utf-8'),
     template = handlebars.compile(tmplSource),
-    data = JSON.parse(fs.readFileSync('assets/shows.json', 'utf-8'));
+    data = JSON.parse(fs.readFileSync('https://github.com/3milychu/timeplay/blob/master/assets/shows.json', 'utf-8'));
 
 var byArtist = _.groupBy(data, 'artist');
     byVenue = _.groupBy(data, 'venue');
@@ -69,4 +69,4 @@ for (var i=0; i<doubleAlphabetized.length; i++){
 var markup = template({names:names, shows:shows, venues:venues, showCount:showCount,
               totalShowCount:totalShowCount, totalCount:totalCount, venueObjects:venueObjects,
               doubleAlphabetized:doubleAlphabetized, allDurationTotal:allDurationTotal})
-fs.writeFileSync('site/index.html', markup);
+fs.writeFileSync('index.html', markup);
